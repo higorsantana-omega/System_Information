@@ -36,6 +36,21 @@ class Application():
                                     font='Helvetica 12 bold', bg="#DCDCDC", fg="#000000")
         self.lb_system.grid(row=0, column=0, pady=1, padx=0)
 
+        self.lb_platform = Label(self.fr_dados, text='Platform: ', width=13, height=1,
+                                    pady=7, padx=0, relief="flat", anchor=NW, 
+                                    font='Helvetica 12 bold', bg="#DCDCDC", fg="#000000")
+        self.lb_platform.grid(row=1, column=0, pady=1, padx=0)
+
+        self.lb_processor = Label(self.fr_dados, text='Processor: ', width=13, height=1,
+                                    pady=7, padx=0, relief="flat", anchor=NW, 
+                                    font='Helvetica 12 bold', bg="#DCDCDC", fg="#000000")
+        self.lb_processor.grid(row=2, column=0, pady=1, padx=0)
+
+        self.lb_architecture = Label(self.fr_dados, text='Architecture: ', width=13, height=1,
+                                    pady=7, padx=0, relief="flat", anchor=NW, 
+                                    font='Helvetica 12 bold', bg="#DCDCDC", fg="#000000")
+        self.lb_architecture.grid(row=3, column=0, pady=1, padx=0)
+
     def dados(self):
         self.system_name = platform.system()
 
@@ -44,6 +59,21 @@ class Application():
         self.et_system.grid(row=0, column=1, padx=0, pady=1)
         self.et_system.insert(END, self.system_name)
         self.et_system.configure(state='disabled')
+
+        self.et_plataform = Entry(self.fr_dados, width=30, font='Arial 10', bg='white')
+        self.et_plataform.grid(row=1, column=1, padx=0, pady=1)
+        self.et_plataform.insert(END, self.system_name)
+        self.et_plataform.configure(state='disabled')
+
+        self.et_processor = Entry(self.fr_dados, width=30, font='Arial 10', bg='white')
+        self.et_processor.grid(row=1, column=1, padx=0, pady=1)
+        self.et_processor.insert(END, self.system_name)
+        self.et_processor.configure(state='disabled')
+
+        self.et_architecture = Entry(self.fr_dados, width=30, font='Arial 10', bg='white')
+        self.et_architecture.grid(row=1, column=1, padx=0, pady=1)
+        self.et_architecture.insert(END, self.system_name)
+        self.et_architecture.configure(state='disabled')
 
 
 Application()
