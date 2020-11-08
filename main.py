@@ -37,8 +37,13 @@ class Application():
         self.lb_system.grid(row=0, column=0, pady=1, padx=0)
 
     def dados(self):
-        self.et_system = Entry(self.fr_dados, width=30, font='Arial 10')
+        self.system_name = platform.system()
+
+
+        self.et_system = Entry(self.fr_dados, width=30, font='Arial 10', bg='white')
         self.et_system.grid(row=0, column=1, padx=0, pady=1)
+        self.et_system.insert(END, self.system_name)
+        self.et_system.configure(state='disabled')
 
 
 Application()
