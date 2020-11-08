@@ -53,7 +53,9 @@ class Application():
 
     def dados(self):
         self.system_name = platform.system()
-
+        self.plataform = platform.platform()
+        self.processor = platform.processor()
+        self.architecture = platform.architecture()
 
         self.et_system = Entry(self.fr_dados, width=30, font='Arial 10', bg='white')
         self.et_system.grid(row=0, column=1, padx=0, pady=1)
@@ -62,17 +64,17 @@ class Application():
 
         self.et_plataform = Entry(self.fr_dados, width=30, font='Arial 10', bg='white')
         self.et_plataform.grid(row=1, column=1, padx=0, pady=1)
-        self.et_plataform.insert(END, self.system_name)
+        self.et_plataform.insert(END, self.plataform)
         self.et_plataform.configure(state='disabled')
 
         self.et_processor = Entry(self.fr_dados, width=30, font='Arial 10', bg='white')
-        self.et_processor.grid(row=1, column=1, padx=0, pady=1)
-        self.et_processor.insert(END, self.system_name)
+        self.et_processor.grid(row=2, column=1, padx=0, pady=1)
+        self.et_processor.insert(END, self.processor)
         self.et_processor.configure(state='disabled')
 
         self.et_architecture = Entry(self.fr_dados, width=30, font='Arial 10', bg='white')
-        self.et_architecture.grid(row=1, column=1, padx=0, pady=1)
-        self.et_architecture.insert(END, self.system_name)
+        self.et_architecture.grid(row=3, column=1, padx=0, pady=1)
+        self.et_architecture.insert(END, self.architecture)
         self.et_architecture.configure(state='disabled')
 
 
