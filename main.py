@@ -11,6 +11,7 @@ class Application():
         self.window()
         self.frames()
         self.labels()
+        self.dados()
         root.mainloop()
 
     def window(self):
@@ -34,6 +35,8 @@ class Application():
                                     pady=7, padx=0, relief="flat", anchor=NW, 
                                     font='Helvetica 12 bold', bg="#DCDCDC", fg="#000000")
         self.lb_system.grid(row=0, column=0, pady=1, padx=0)
+
+    def dados(self):
         self.et_system = Entry(self.fr_dados, width=30, font='Arial 10')
         self.et_system.grid(row=0, column=1, padx=0, pady=1)
 
