@@ -1,6 +1,5 @@
 import platform
 from tkinter import *
-from tkinter import ttk
 
 
 root = Tk()
@@ -15,7 +14,7 @@ class Application():
         root.mainloop()
 
     def window(self):
-        self.root.geometry('500x500')
+        self.root.geometry('500x300')
         self.root.resizable(width = FALSE, height = FALSE)
         self.root.title('System Information')
         self.root.configure(bg='#DCDCDC')
@@ -51,11 +50,17 @@ class Application():
                                     font='Helvetica 12 bold', bg="#DCDCDC", fg="#000000")
         self.lb_architecture.grid(row=3, column=0, pady=1, padx=0)
 
+        self.lb_computername = Label(self.fr_dados, text='ComputerName: ', width=13, height=1,
+                                    pady=7, padx=0, relief="flat", anchor=NW, 
+                                    font='Helvetica 12 bold', bg="#DCDCDC", fg="#000000")
+        self.lb_computername.grid(row=4, column=0, pady=1, padx=0)
+
     def dados(self):
         self.system_name = platform.system()
         self.plataform = platform.platform()
         self.processor = platform.processor()
         self.architecture = platform.architecture()
+        self.computername = platform.node()
 
         self.et_system = Entry(self.fr_dados, width=30, font='Arial 10', bg='white')
         self.et_system.grid(row=0, column=1, padx=0, pady=1)
@@ -77,5 +82,9 @@ class Application():
         self.et_architecture.insert(END, self.architecture)
         self.et_architecture.configure(state='disabled')
 
+        self.et_computername = Entry(self.fr_dados, width=30, font='Arial 10', bg='white')
+        self.et_computername.grid(row=4, column=1, padx=0, pady=1)
+        self.et_computername.insert(END, self.computername)
+        self.et_computername.configure(state='disabled')
 
 Application()
